@@ -1,0 +1,20 @@
+# Docs
+book
+docs/mdbook-plantuml-img
+output.log
+
+# Python
+.venv
+__pycache__
+
+# Django
+db.sqlite3
+.coverage
+
+# Code
+.devcontainer
+build
+share.egg-info
+
+# Privates
+.env
