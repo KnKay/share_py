@@ -1,6 +1,5 @@
 on:
   pull_request:
-    types: [opened, reopened]
 
 jobs:
   specific_review_requested:
