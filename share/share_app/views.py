@@ -32,6 +32,3 @@ class LocationViewSet(viewsets.ModelViewSet):
                 serializer.update(instance, serializer.validated_data)
             return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def update(self, request, *args, **kwargs):
-        return self.create(request, args, kwargs)
