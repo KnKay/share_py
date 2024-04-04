@@ -8,3 +8,11 @@ class Category(models.Model):
 
   def __str__(self):
     return json.dumps(self)
+
+class Location(models.Model):
+  city = models.CharField(max_length=12)
+  post_code = models.SmallIntegerField()
+  class Meta:
+      unique_together = ('city', 'post_code',)
+  def __str__(self):
+    return json.dumps(self)

@@ -16,5 +16,8 @@ db.sqlite3
 build
 share.egg-info
 
+# Pytest
+
+
 # Privates
 .env
