@@ -5,7 +5,7 @@ class ReadOnly(BasePermission):
     return request.method in SAFE_METHODS
 
 
-class Location(BasePermission):
+class LocationPermision(BasePermission):
   '''
   We need users to allow create
   '''
