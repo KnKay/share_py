@@ -24,7 +24,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
-from share_app.views import CategoryViewSet
+from share_app.views import CategoryViewSet, LocationViewSet
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -48,6 +48,7 @@ schema_view = get_schema_view(
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'categories', CategoryViewSet, 'categories')
+router.register(r'locations', LocationViewSet, 'locations')
 
 urlpatterns = [
     path("admin/", admin.site.urls),
