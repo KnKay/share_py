@@ -2,11 +2,16 @@ import copy
 
 from rest_framework import serializers
 import rest_framework.validators
-from .models import Category, Location
+from .models import Category, Location, Item
 
 class CategorySerializer(serializers.ModelSerializer):
   class Meta:
     model = Category
+    fields = '__all__'
+
+class ItemSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Item
     fields = '__all__'
 
 class LocationSerializer(serializers.ModelSerializer):

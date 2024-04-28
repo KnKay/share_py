@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser
 from rest_framework.settings import api_settings
 from .models import Category, Location
-from .serializers import CategorySerializer, LocationSerializer
+from .serializers import CategorySerializer, LocationSerializer, ItemSerializer
 from .permissions import ReadOnly, LocationPermision
 
 def index(request):
@@ -16,6 +16,11 @@ class CategoryViewSet(viewsets.ModelViewSet):
     permission_classes = [ReadOnly | IsAdminUser]
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class ItemViewSet(viewsets.ModelViewSet):
+    permission_classes = [ReadOnly | IsAdminUser]
+    queryset = Category.objects.all()
+    serializer_class = ItemSerializer
 
 # As we want to have at least work as needed and locations should be an easy thing:
 # Create = get or create (as we will have persons sharhing the location)
