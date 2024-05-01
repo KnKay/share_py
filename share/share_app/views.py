@@ -4,7 +4,7 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser
 from rest_framework.settings import api_settings
-from .models import Category, Location
+from .models import Category, Location, Item
 from .serializers import CategorySerializer, LocationSerializer, ItemSerializer
 from .permissions import ReadOnly, LocationPermision
 
@@ -19,7 +19,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 class ItemViewSet(viewsets.ModelViewSet):
     permission_classes = [ReadOnly | IsAdminUser]
-    queryset = Category.objects.all()
+    queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
 # As we want to have at least work as needed and locations should be an easy thing:
