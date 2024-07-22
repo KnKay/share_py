@@ -53,4 +53,4 @@ class LocationTests(APITestCase, URLPatternsTestCase, Clients):
         update = self.user_client.post(url,data, format='json')
         self.assertEqual(update.status_code, status.HTTP_202_ACCEPTED)
         response2 = self.client.get(url, format='json')
-        assert response2.data == response.da
+        assert response2.data == response.data

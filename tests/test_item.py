@@ -38,8 +38,14 @@ class ItemTests(APITestCase, URLPatternsTestCase, Clients):
         self.assertEqual(response.data["header"], "This is short")
 
     def test_annon_no_write(self):
-        pass
-
+        '''
+        Ensure that we can only announce new stuff if we dare known
+        '''
+        url = reverse('items-list')
+        data = {'city': 'Hamburg', 'post_code': 13371}
+        response = self.client.post(url,data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertEqual(len(response.data), 1)
 
     def test_user_create(self):
         # Include an appropriate `Authorization:` header on all requests.
